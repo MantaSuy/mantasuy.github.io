@@ -1,33 +1,165 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manta Suy – Games</title>
-<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:2em auto;padding:0 1em;line-height:1.55;color:#222;background:#faf7f2}h1{color:#4a2d1a;margin-bottom:.2em}.card{background:#fff;border:1px solid #e6dccf;border-radius:12px;padding:1em 1.2em;margin:1em 0}.card h2{margin:0 0 .3em;color:#4a2d1a}a{color:#8a4b1f}small{color:#777}</style></head>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manta Suy · Cozy indie mobile games</title>
+<meta name="description" content="Manta Suy is an indie mobile game developer from the Philippines making cute, relaxing puzzle games for Android.">
+<meta name="theme-color" content="#5b5bf0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manta Suy">
+<meta property="og:title" content="Manta Suy · Cozy indie mobile games">
+<meta property="og:description" content="Cute, relaxing puzzle games for Android, made in the Philippines.">
+<meta property="og:url" content="https://mantasuy.github.io/">
+<meta property="og:image" content="https://mantasuy.github.io/assets/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--ink:#1d1d3a;--muted:#5d5d7a;--bg:#fffaf0;--sand:#fff4d6;--sea:#36d1dc;--violet:#5b5bf0;--r:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:ui-rounded,"SF Pro Rounded","Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--violet)}img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,250,240,.85);backdrop-filter:blur(10px);border-bottom:1px solid #f0e6cf}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;color:var(--ink);text-decoration:none}
+.brand img{width:40px;height:40px}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}nav ul a{color:var(--ink);text-decoration:none;font-weight:600}nav ul a:hover{color:var(--violet)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 80% -10%,#c9f3f6 0,transparent 60%),radial-gradient(900px 500px at -10% 110%,#e4e2ff 0,transparent 60%),var(--sand)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px;padding-top:70px;padding-bottom:90px}
+.hero h1{font-size:clamp(2.3rem,5.5vw,4rem);line-height:1.05;margin:0 0 16px;letter-spacing:-.02em}
+.hero h1 span{background:linear-gradient(90deg,var(--sea),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:34em;margin:0 0 26px}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;margin:0 10px 10px 0;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--violet);color:#fff;box-shadow:0 8px 20px rgba(91,91,240,.3)}.btn.ghost{background:#fff;color:var(--ink);border:2px solid #e8dcc0}
+.mascot{width:min(340px,80%);margin:auto;animation:float 5s ease-in-out infinite;filter:drop-shadow(0 20px 25px rgba(91,91,240,.25))}
+@keyframes float{50%{transform:translateY(-14px) rotate(-3deg)}}
+@media (prefers-reduced-motion:reduce){.mascot{animation:none}html{scroll-behavior:auto}}
+.wave{position:absolute;bottom:-1px;left:0;width:100%;height:60px}
+section{padding:70px 0}h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin:0 0 8px;letter-spacing:-.01em}.lead{color:var(--muted);margin:0 0 34px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.card{background:#fff;border-radius:var(--r);padding:22px;box-shadow:0 2px 0 #f0e6cf,0 14px 34px rgba(29,29,58,.07);border-top:6px solid var(--accent);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 2px 0 #f0e6cf,0 22px 40px rgba(29,29,58,.12)}
+.card-head{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.icon{width:76px;height:76px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.card h3{margin:0;font-size:1.25rem;line-height:1.25}.tag{font-size:.85rem;color:var(--muted);font-weight:600}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}.shots img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#f3eee2}
+.card p{margin:0 0 18px;color:#3a3a58;flex:1}
+.card-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.play{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;font-size:.92rem;text-decoration:none}
+.play.soon{background:#ececf4;color:#55557a;cursor:default}
+.pp{font-weight:600;font-size:.95rem}
+.about{background:#fff}.about .wrap{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}.about img{width:180px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none}.pills li{background:var(--sand);padding:6px 14px;border-radius:999px;font-weight:600;font-size:.92rem}
+.contact-box{background:linear-gradient(135deg,var(--sea),var(--violet));color:#fff;border-radius:28px;padding:44px;text-align:center}
+.contact-box p{opacity:.92}.contact-box a.btn{background:#fff;color:var(--violet)}
+footer{background:var(--ink);color:#c9c9e0;padding:40px 0;font-size:.95rem}footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}footer a{color:#fff}footer ul{list-style:none;margin:6px 0 0;padding:0}footer h4{margin:0;color:#fff}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;text-align:center;padding-top:40px}.hero p{margin-left:auto;margin-right:auto}.mascot{width:200px;grid-row:1}.grid{grid-template-columns:1fr}nav ul{display:none}.about .wrap{grid-template-columns:1fr;text-align:center}.about img{margin:auto;width:130px}.pills{justify-content:center}.contact-box{padding:30px 20px}}
+</style>
+</head>
 <body>
-<h1>Manta Suy</h1>
-<p>Independent developer of simple, relaxing mobile games for Android.</p>
-<div class="card">
-<h2>Burlbox – Wood Block Puzzle</h2>
-<p>A calm wooden block puzzle: fill rows, columns and 3x3 boxes. Plays offline. For teens and adults (13+). Contains ads.</p>
-<p><a href="burlbox/privacy-policy.html">Privacy Policy</a></p>
+<nav><div class="wrap"><a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="40" height="40">Manta Suy</a>
+<ul><li><a href="#games">Games</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+<main id="top">
+<header class="hero"><div class="wrap">
+  <div><h1>Little games,<br><span>big smiles.</span></h1>
+  <p>Manta Suy makes cozy, cute and relaxing puzzle games for your phone, crafted with love in the Philippines 🇵🇭. Play offline, any time.</p>
+  <a class="btn primary" href="#games">See our games</a><a class="btn ghost" href="#contact">Say hello</a></div>
+  <img class="mascot" src="assets/logo.svg" alt="Manta Suy mascot, a smiling manta ray" width="340" height="340">
 </div>
-<div class="card">
-<h2>Critter Sort</h2>
-<p>A cute animal sorting puzzle: sort the critters into tubes. Plays offline. Contains ads.</p>
-<p><a href="critter-sort/privacy-policy.html">Privacy Policy</a></p>
-</div>
-<div class="card">
-<h2>Critter Pop: Animal Match</h2>
-<p>A cute animal match-3 puzzle: swap critters, pop matches and make combos. Plays offline. For teens and adults (13+). Contains ads.</p>
-<p><a href="critter-pop/privacy-policy.html">Privacy Policy</a></p>
-</div>
-<div class="card">
-<h2>Nuts &amp; Bolts: Screw Puzzle</h2>
-<p>A colorful screw puzzle: unscrew the bolts in the right order, fill the color boxes and drop every plate. Plays offline. For teens and adults (13+). Contains ads.</p>
-<p><a href="screw-puzzle/privacy-policy.html">Privacy Policy</a></p>
-</div>
-<!-- Add more games here, e.g.:
-<div class="card"><h2>Critter Merge</h2><p>...</p><p><a href="critter-merge/privacy-policy.html">Privacy Policy</a></p></div>
--->
-<p>Contact: <a href="mailto:gilbertarga9@gmail.com">gilbertarga9@gmail.com</a></p>
-<p><small>© 2026 Manta Suy</small></p>
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30c240 30 480 30 720 0s480-30 720 0v30H0z" fill="#fffaf0"/></svg></header>
+
+<section id="games"><div class="wrap">
+  <h2>Our games</h2><p class="lead">Bite-sized puzzles to unwind with. Coming soon to Google Play.</p>
+  <div class="grid">
+    <!-- To go live: set href to the Play Store URL and change the badge text to "Get it on Google Play". -->
+    <article class="card" style="--accent:#c98b4f">
+      <header class="card-head">
+        <img class="icon" src="assets/games/burlbox-icon.webp" width="96" height="96" alt="Burlbox: Wood Block Puzzle icon" loading="lazy">
+        <div><h3>Burlbox: Wood Block Puzzle</h3><span class="tag">Puzzle · Offline</span></div>
+      </header>
+      <div class="shots">
+        <img src="assets/games/burlbox-shot1.webp" width="360" height="640" alt="Burlbox: Wood Block Puzzle screenshot 1" loading="lazy">
+        <img src="assets/games/burlbox-shot2.webp" width="360" height="640" alt="Burlbox: Wood Block Puzzle screenshot 2" loading="lazy">
+      </div>
+      <p>A calm wooden block puzzle. Drop blocks to fill rows, columns and 3×3 boxes, then watch them clear with a satisfying pop. No timers, no rush, just you and the grain.</p>
+      <div class="card-foot">
+        <a class="play soon" data-play-link aria-disabled="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 2.5v19l17-9.5z"/></svg><span>Coming soon on Google Play</span></a>
+        <a class="pp" href="burlbox/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </article>
+    <!-- To go live: set href to the Play Store URL and change the badge text to "Get it on Google Play". -->
+    <article class="card" style="--accent:#b48cf2">
+      <header class="card-head">
+        <img class="icon" src="assets/games/critter-sort-icon.webp" width="96" height="96" alt="Critter Sort icon" loading="lazy">
+        <div><h3>Critter Sort</h3><span class="tag">Puzzle · Offline</span></div>
+      </header>
+      <div class="shots">
+        <img src="assets/games/critter-sort-shot1.webp" width="360" height="640" alt="Critter Sort screenshot 1" loading="lazy">
+        <img src="assets/games/critter-sort-shot2.webp" width="360" height="640" alt="Critter Sort screenshot 2" loading="lazy">
+      </div>
+      <p>Sort the cute critters into tubes! Each animal has its own little voice, and there are 100+ relaxing levels across 5 worlds.</p>
+      <div class="card-foot">
+        <a class="play soon" data-play-link aria-disabled="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 2.5v19l17-9.5z"/></svg><span>Coming soon on Google Play</span></a>
+        <a class="pp" href="critter-sort/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </article>
+    <!-- To go live: set href to the Play Store URL and change the badge text to "Get it on Google Play". -->
+    <article class="card" style="--accent:#4fae6a">
+      <header class="card-head">
+        <img class="icon" src="assets/games/critter-pop-icon.webp" width="96" height="96" alt="Critter Pop: Animal Match icon" loading="lazy">
+        <div><h3>Critter Pop: Animal Match</h3><span class="tag">Match-3 · Offline</span></div>
+      </header>
+      <div class="shots">
+        <img src="assets/games/critter-pop-shot1.webp" width="360" height="640" alt="Critter Pop: Animal Match screenshot 1" loading="lazy">
+        <img src="assets/games/critter-pop-shot2.webp" width="360" height="640" alt="Critter Pop: Animal Match screenshot 2" loading="lazy">
+      </div>
+      <p>Swap adorable painted animals, pop matches and fire off combos in a bright jungle match-3 adventure.</p>
+      <div class="card-foot">
+        <a class="play soon" data-play-link aria-disabled="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 2.5v19l17-9.5z"/></svg><span>Coming soon on Google Play</span></a>
+        <a class="pp" href="critter-pop/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </article>
+    <!-- To go live: set href to the Play Store URL and change the badge text to "Get it on Google Play". -->
+    <article class="card" style="--accent:#f08a3c">
+      <header class="card-head">
+        <img class="icon" src="assets/games/screw-puzzle-icon.webp" width="96" height="96" alt="Nuts &amp; Bolts: Screw Puzzle icon" loading="lazy">
+        <div><h3>Nuts &amp; Bolts: Screw Puzzle</h3><span class="tag">Brain teaser · Offline</span></div>
+      </header>
+      <div class="shots">
+        <img src="assets/games/screw-puzzle-shot1.webp" width="360" height="640" alt="Nuts &amp; Bolts: Screw Puzzle screenshot 1" loading="lazy">
+        <img src="assets/games/screw-puzzle-shot2.webp" width="360" height="640" alt="Nuts &amp; Bolts: Screw Puzzle screenshot 2" loading="lazy">
+      </div>
+      <p>Grab your screwdriver! Unscrew colorful bolts in the right order, fill the color boxes and drop every plate.</p>
+      <div class="card-foot">
+        <a class="play soon" data-play-link aria-disabled="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 2.5v19l17-9.5z"/></svg><span>Coming soon on Google Play</span></a>
+        <a class="pp" href="screw-puzzle/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="about" class="about"><div class="wrap">
+  <img src="assets/logo.svg" alt="" width="180" height="180" loading="lazy">
+  <div><h2>About Manta Suy</h2>
+  <p>Manta Suy is a tiny independent studio from the Philippines. We build simple, charming mobile games that are easy to pick up and hard to put down: no stress, no confusing menus, just good-feeling puzzles you can play anywhere, even without internet.</p>
+  <ul class="pills"><li>🧩 Puzzle games</li><li>📴 Plays offline</li><li>🐾 Cute characters</li><li>🌴 Made in the Philippines</li></ul></div>
+</div></section>
+
+<section id="contact"><div class="wrap"><div class="contact-box">
+  <h2>Get in touch</h2><p>Feedback, bug reports, partnerships or just a hello: we read every message.</p>
+  <a class="btn" href="mailto:gilbertarga9@gmail.com">gilbertarga9@gmail.com</a>
+</div></div></section>
+</main>
+<footer><div class="wrap">
+  <div><h4>Manta Suy</h4><p>© 2026 Manta Suy. All rights reserved.<br><a href="mailto:gilbertarga9@gmail.com">gilbertarga9@gmail.com</a></p></div>
+  <div><h4>Privacy policies</h4><ul>
+    <li><a href="burlbox/privacy-policy.html">Burlbox: Wood Block Puzzle</a></li>
+    <li><a href="critter-sort/privacy-policy.html">Critter Sort</a></li>
+    <li><a href="critter-pop/privacy-policy.html">Critter Pop: Animal Match</a></li>
+    <li><a href="screw-puzzle/privacy-policy.html">Nuts &amp; Bolts: Screw Puzzle</a></li></ul></div>
+</div></footer>
 </body></html>
